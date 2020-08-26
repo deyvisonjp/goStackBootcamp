@@ -24,3 +24,8 @@
 ## AULA 8 - APLICAÇÃO FUNCIONAL
 - Instalar uuidv4;
   `yarn add uuidv4` 
+
+## AULA9 - MIDDLEWARE
+Interpretador de requisições que pode interromper totalmente a requisição ou alterar dados da requisição.
+Ainda Middleares são funções(interceptadoras) do tipo:
+- `function middleware(req, res, next)` 

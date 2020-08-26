@@ -1,18 +1,45 @@
 const express = require('express');
 
 // Cria um id universal único
-const { uuid } = require('uuidv4');
+const { uuid, isUuid } = require('uuidv4');
 const { response } = require('express');
 
 const app = express();
 
-// Facilita o retorno de objetos para JSON
+// Facilita o retorno de objetos para JSON (converte o corpo da requisição)
 app.use(express.json());
 
 const projects = [];
 
+// MIDDLEWARES
+function logRequests(req, res, next) {
+  const { method, url } = req;
+
+  const logLabel = `[${method.toUpperCase()}] ${url}`;
+
+  console.time(logLabel);
+
+  next(); //Próximo middleare
+
+  console.timeEnd(logLabel);
+}
+
+function validateProjectId(req, res, next) {
+  const { id } = req.params;
+
+  if (!isUuid(id)) {
+    return res.status(400).json({ error: 'ID inválido'});
+  }
+
+  return next();
+
+} 
+
+// Aqui limitamos o middlewares para rodarem exclusivamente nessas rotas
+app.use('/projects/:id', validateProjectId);
+
 // VIEW
-app.get('/projects', (req, res) => {
+app.get('/projects', logRequests, (req, res) => {
   const { title } = req.query;
 
   const pesquisa = title //Se o título foi preenchido pelo usuário, então pesquisa vai receber
