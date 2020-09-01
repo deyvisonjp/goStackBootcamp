@@ -22,3 +22,6 @@ Após instalado:
 - Próxima vez que iniciar o computador, docker start ...
 _docker ps -a_
 _docker start nome-do-banco_
+
+## Conexão com o banco de dados
+- `npm install mongoose` ->> ORM de bancos não relacionais
