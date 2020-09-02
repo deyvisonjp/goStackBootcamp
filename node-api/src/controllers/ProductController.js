@@ -6,7 +6,8 @@ module.exports = {
 
    //VIEW
    async index(req, res) {
-      const products = await Product.find();
+      const { page = 1 } = req.query; // Por padrão a página retornada será a 1
+      const products = await Product.paginate({}, { page, limit: 10 });
       return res.json(products);
    },
 

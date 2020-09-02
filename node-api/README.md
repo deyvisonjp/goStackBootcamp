@@ -25,4 +25,4 @@ _docker start nome-do-banco_
 
 ## Conexão com o banco de dados
 - `npm install mongoose` ->> ORM de bancos não relacionais
-
+- `npm install mongoose-paginate` -> Traz um conjunto de opçoes para paginação nas buscas(views)
