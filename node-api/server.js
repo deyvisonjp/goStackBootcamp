@@ -3,6 +3,8 @@ const mongoose = require('mongoose');
 
 // Iniciando o App
 const app = express();
+app.use(express.json());
+
 const port = 3333;
 
 // Inciando o DB
