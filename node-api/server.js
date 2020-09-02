@@ -17,13 +17,6 @@ require('./src/models/Product');
 const Product = mongoose.model("Product");
 
 // Primeira rota
-app.use('/', (req, res) => {
-   Product.create({
-      title: 'Node Rocketseat',
-      description: 'Project Node API example',
-      url: 'https://github.com/deyvisonjp/rocketseat-node/tree/master/node-api'
-   })
-   res.send('Sistema Node rodando na porta ' + port);
-})
+app.use('/api', require('./src/routes'));
 
 app.listen(3333, console.log('Rodando na porta:', port))
