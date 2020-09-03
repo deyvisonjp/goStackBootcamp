@@ -25,4 +25,5 @@ _docker start nome-do-banco_
 
 ## Conexão com o banco de dados
 - `npm install mongoose` ->> ORM de bancos não relacionais
-- `npm install mongoose-paginate` -> Traz um conjunto de opçoes para paginação nas buscas(views)
+- `npm install mongoose-paginate` ->> Traz um conjunto de opçoes para paginação nas buscas(views)
+- `npm install cors` ->> O padrão Cross-Origin Resource Sharing trabalha adicionando novos cabeçalhos HTTP que permitem que os servidores descrevam um conjunto de origens que possuem permissão a ler uma informação usando o navegador. Para mais informações, clique [aqui](https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Controle_Acesso_CORS)
